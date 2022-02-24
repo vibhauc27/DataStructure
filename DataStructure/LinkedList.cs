@@ -41,39 +41,14 @@ namespace DataStructure
                 temp = temp.next;
             }
         }
-        internal Node Insert(int position, int data)
+        internal Node RemoveFirstNode()
         {
-            if (position < 1)
+            if (this.head == null)
             {
-                Console.WriteLine("Invalid position");
-
-                if (position == 1)
-                {
-                    var newNode = new Node(data);
-                    newNode.next = this.head;
-                    head = newNode;
-                }
-                else
-                {
-                    while (position-- != 0)
-                    {
-                        if (position == 1)
-                        {
-                            Node node = new Node(data);
-                            node.next = this.head.next;
-                            head.next = node;
-                            break;
-                        }
-                        head = head.next;
-                    }
-                    if (position != 1)
-
-                        Console.WriteLine("Position out of rang");
-                }
-
+                return null;
             }
-            Console.WriteLine("Inserted value is : " + data);
-            return head;
+            this.head = this.head.next;
+            return this.head;
         }
     }
 }
