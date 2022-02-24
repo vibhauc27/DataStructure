@@ -41,5 +41,21 @@ namespace DataStructure
                 temp = temp.next;
             }
         }
+
+        internal void AddReverse(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            else
+            {
+                Node temp = head;
+                head = node;
+                head.next = temp;
+            }
+            Console.WriteLine("{0} inserted into linked list", node.data);
+        }
     }
 }
