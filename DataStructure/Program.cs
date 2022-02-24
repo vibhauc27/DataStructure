@@ -12,9 +12,11 @@ namespace DataStructure
             list.Add(56);
             list.Add(30);
             list.Add(70);
-            list.RemoveLastNode();
-            Console.WriteLine("After removing is : ");
-            list.Display();
+            int searchData = list.Search(30);
+
+            if (searchData != 0)
+                Console.WriteLine("\n{0} is present in the LinkedList ", searchData);
+           
         }
     }
 }
