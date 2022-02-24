@@ -14,9 +14,15 @@ namespace DataStructure
             //list.Add(70);
             //list.Display();
 
-            list.AddReverse(70);
-            list.AddReverse(30);
-            list.AddReverse(56);
+            //list.AddReverse(70);
+            //list.AddReverse(30);
+            //list.AddReverse(56);
+            //Console.WriteLine("Display Nodes are");
+            //list.Display();
+
+            list.Appending(56);
+            list.Appending(30);
+            list.Appending(70);
             Console.WriteLine("Display Nodes are");
             list.Display();
         }
