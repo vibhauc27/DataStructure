@@ -58,39 +58,47 @@ namespace DataStructure
             //Console.WriteLine("\n{0} is not present ", value);
             return count;
         }
-        internal Node InsertAtParticularPosition(int position, int data)
+        internal void DeleteNodeAtParticularPosition(int position)
         {
-            if (position < 1)
+            if (this.head == null)
             {
-                Console.WriteLine("Invalid position");
-
-                if (position == 1)
-                {
-                    var newNode = new Node(data);
-                    newNode.next = this.head;
-                    head = newNode;
-                }
-                else
-                {
-                    while (position-- != 0)
-                    {
-                        if (position == 1)
-                        {
-                            Node node = new Node(data);
-                            node.next = this.head.next;
-                            head.next = node;
-                            break;
-                        }
-                        head = head.next;
-                    }
-                    if (position != 1)
-
-                        Console.WriteLine("Position is out of range");
-                }
+                Console.WriteLine("LinkedList is empty");
+                return;
+            }
+            Node temp = this.head;
+            if (position == 0)
+            {
+                this.head = temp.next;
+                return;
+            }
+            for (int i = 0; temp != null && i < position - 1; i++)
+            {
+                temp = temp.next;
 
             }
-            Console.WriteLine("Inserted value is : " + data + " after 30");
-            return head;
+            if (temp == null || temp.next == null)
+            {
+                return;
+            }
+            Node next = temp.next.next;
+            temp.next = next;
+        }
+        internal void Size()
+        {
+            Node temp = this.head;
+            int count = 0;
+            if (temp == null)
+            {
+                Console.WriteLine("LinkedList is empty");
+                return;
+            }
+            while (temp != null)
+            {
+                temp = temp.next;
+                count++;
+            }
+            Console.WriteLine("Size of LinkedList is :" + " " + count);
+
         }
     }
 }
