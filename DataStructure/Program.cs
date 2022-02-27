@@ -12,11 +12,14 @@ namespace DataStructure
             list.Add(56);
             list.Add(30);
             list.Add(70);
-            int searchData = list.Search(30);
+            list.Display();
 
-            if (searchData != 0)
-                Console.WriteLine("\n{0} is present in the LinkedList ", searchData);
-           
+            int a = list.Search(30);
+            a++;
+            list.InsertAtParticularPosition(a + 1, 40);
+            list.Add(40);
+            list.Display();
+
         }
     }
 }
